@@ -1,4 +1,10 @@
-﻿class Panier {
+const total = (items) =>
+  items.reduce((sum, item) => {
+    if (item.prix < 0) throw new Error('Prix négatif');
+    return sum + item.prix * item.qte;
+  }, 0);
+
+class Panier {
   constructor() {
     this.items = [];
   }
@@ -14,3 +20,4 @@
 }
 
 module.exports = Panier;
+module.exports.total = total;

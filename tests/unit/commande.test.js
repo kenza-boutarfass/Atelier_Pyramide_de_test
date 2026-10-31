@@ -1,4 +1,4 @@
-﻿const Commande = require('../../src/commande');
+const Commande = require('../../src/commande');
 const Panier = require('../../src/panier');
 
 describe('Commande', () => {
