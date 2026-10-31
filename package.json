@@ -23,6 +23,15 @@
     "supertest": "^7.3.1"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/commande.js",
+      "src/panier.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 80
+      }
+    },
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/e2e/"

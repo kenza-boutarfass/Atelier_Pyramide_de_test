@@ -1,11 +1,6 @@
-﻿const { Pool } = require('pg');
+const { Pool } = require('pg');
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/atelier'
+module.exports = new Pool({
+  connectionString:
+    process.env.DATABASE_URL || 'postgres://test:test@localhost:5432/testdb',
 });
-
-async function query(text, params) {
-  return pool.query(text, params);
-}
-
-module.exports = { pool, query };

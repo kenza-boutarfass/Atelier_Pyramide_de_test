@@ -1,3 +1,4 @@
+const Panier = require('../../src/panier');
 const { total } = require('../../src/panier');
 
 describe('total()', () => {
@@ -24,5 +25,11 @@ describe('total()', () => {
   test('refuse un prix négatif', () => {
     const items = [{ prix: -5, qte: 1 }];
     expect(() => total(items)).toThrow('Prix négatif');
+  });
+
+  test('retourne 0 pour un article sans prix', () => {
+    const panier = new Panier();
+    panier.ajouter({});
+    expect(panier.total()).toBe(0);
   });
 });
